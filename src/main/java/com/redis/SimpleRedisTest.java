@@ -50,7 +50,7 @@ public class SimpleRedisTest {
 //            System.out.println(t.getElement() + ":" + t.getScore());
         }
 
-        System.out.println(jedis.zrank("1111","test1"));
+        System.out.println(jedis.zrank("1111","test2"));
 
 /*
         // 获取数据并输出
