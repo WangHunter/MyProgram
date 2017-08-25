@@ -47,10 +47,11 @@ public class SimpleRedisTest {
         Set<Tuple> tuples = jedis.zrevrangeWithScores("1111",0,-1);
 
         for(Tuple t : tuples){
-//            System.out.println(t.getElement() + ":" + t.getScore());
+            System.out.println(t.getElement() + ":" + t.getScore());
         }
 
-        System.out.println(jedis.zrank("1111","test2"));
+        //获取元素的得分
+        System.out.println(jedis.zscore("1111","test2"));
 
 /*
         // 获取数据并输出
