@@ -8,10 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/8/14.
@@ -35,13 +32,17 @@ public class SimpleRedisTest {
 //        System.out.println(jedis.type("uscore_4384935_000000"));
 //        System.out.println(jedis.hget("uscore_4384935_000000","current_score"));
 
-     /*   //获取redis中最大值对应的元素
-        Set sets = jedis.zrevrangeByScore("1111","+inf","-inf",0,6);
+        //获取redis中最大值对应的元素
+        Set sets = jedis.zrevrangeByScore("1111","+inf","-inf",0,2);
         Iterator<String> itSets = sets.iterator();
         while (itSets.hasNext()) {
             String firstItem = itSets.next();
-            System.out.println(firstItem);
-        }*/
+            if(!"time".endsWith(firstItem)){    //用来判断成员是否是time
+                System.out.println(firstItem);
+                break;
+            }
+//            System.out.println(firstItem);
+        }
 
 //        System.out.println(jedis.zincrby("2222",2,"test11"));
         Set<Tuple> tuples = jedis.zrevrangeWithScores("1111",0,-1);
@@ -51,8 +52,7 @@ public class SimpleRedisTest {
         }
 
         //获取元素的得分
-        System.out.println(jedis.zscore("1111","test2"));
-
+//        System.out.println(jedis.zscore("1111","test2"));
 /*
         // 获取数据并输出
         Set<String> keys = jedis.keys("*");

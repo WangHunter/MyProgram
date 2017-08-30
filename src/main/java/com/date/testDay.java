@@ -33,6 +33,9 @@ public class testDay {
         System.out.println(t);
     }
 
+    /**
+     * 得到当前时间
+     */
     @Test
     public void currentTime(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -67,6 +70,22 @@ public class testDay {
             e.printStackTrace();
         }
         return retWeek;
+    }
+
+
+    /**
+     * 计算日期的相隔天数
+     * @throws ParseException
+     */
+    @Test
+    public void getTimelag() throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        Calendar calendar = Calendar.getInstance();//日历对象
+        calendar.setTime(new Date());//设置当前日期
+        Date beginDate = simpleDateFormat.parse("20170701");
+        Date endDate = simpleDateFormat.parse("20170702");
+        long days = (endDate.getTime()-beginDate.getTime())/(24*60*60*1000);
+        System.out.println("相隔天数为："+days);
     }
 
     public static void main(String[] args) {
