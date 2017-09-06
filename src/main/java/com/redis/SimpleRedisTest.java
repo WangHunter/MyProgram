@@ -51,6 +51,8 @@ public class SimpleRedisTest {
             System.out.println(t.getElement() + ":" + t.getScore());
         }
 
+//        jedis.zadd("1111",22,"test1");
+
         //获取元素的得分
 //        System.out.println(jedis.zscore("1111","test2"));
 /*

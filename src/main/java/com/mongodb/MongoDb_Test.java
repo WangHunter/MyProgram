@@ -10,12 +10,12 @@ public class MongoDb_Test {
 
         try {
             // 实例化Mongo对象，连接27017端口
-            Mongo mongo = new Mongo("localhost", 27017);
+            Mongo mongo = new Mongo("200.200.18.128", 27017);
             // 连接名为yourdb的数据库，假如数据库不存在的话，mongodb会自动建立
-            DB db = mongo.getDB("yourdb");
+            DB db = mongo.getDB("learndb");
             // Get collection from MongoDB, database named "yourDB"
             // 从Mongodb中获得名为yourColleection的数据集合，如果该数据集合不存在，Mongodb会为其新建立
-            DBCollection collection = db.getCollection("yourCollection");
+            DBCollection collection = db.getCollection("testlearn");
             // 使用BasicDBObject对象创建一个mongodb的document,并给予赋值。
             BasicDBObject document = new BasicDBObject();
             document.put("id", 1001);

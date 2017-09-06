@@ -26,7 +26,7 @@
     </Appenders>
     <Loggers>
         <!-- 配置记录器级别 -->
-        <Root level="error">
+        <Root level="info">
             <AppenderRef ref="Mytest"/>
             <!-- 输出设置 -->
             <AppenderRef ref="STDOUT"/>

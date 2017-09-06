@@ -83,7 +83,7 @@ public class testDay {
         Calendar calendar = Calendar.getInstance();//日历对象
         calendar.setTime(new Date());//设置当前日期
         Date beginDate = simpleDateFormat.parse("20170701");
-        Date endDate = simpleDateFormat.parse("20170702");
+        Date endDate = simpleDateFormat.parse("20170702.00");
         long days = (endDate.getTime()-beginDate.getTime())/(24*60*60*1000);
         System.out.println("相隔天数为："+days);
     }
