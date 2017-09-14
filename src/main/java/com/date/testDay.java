@@ -88,6 +88,16 @@ public class testDay {
         System.out.println("相隔天数为："+days);
     }
 
+    /**
+     * double 转int
+     */
+    @Test
+    public void double2Integer(){
+        Double old = 2.0170908E7;
+        int now = old.intValue();
+        System.out.println(now);
+    }
+
     public static void main(String[] args) {
         testDay testDay = new testDay();
         System.out.println(testDay.getWeekOfYear("20161228"));

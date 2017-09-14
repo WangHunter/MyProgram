@@ -36,4 +36,9 @@ public class MongoDb_Test {
             e.printStackTrace();
         }
     }
+
+
+    public void docIterator(){
+
+    }
 }

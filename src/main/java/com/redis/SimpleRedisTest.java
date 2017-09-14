@@ -23,7 +23,7 @@ public class SimpleRedisTest {
             file.createNewFile();
         }
 
-        Jedis jedis = new Jedis("10.211.93.169", 6379);
+        Jedis jedis = new Jedis("200.200.18.129", 6379);
 //        jedis.sadd("123456","");
 
 //        System.out.println(jedis.randomKey());
@@ -33,7 +33,7 @@ public class SimpleRedisTest {
 //        System.out.println(jedis.hget("uscore_4384935_000000","current_score"));
 
         //获取redis中最大值对应的元素
-        Set sets = jedis.zrevrangeByScore("1111","+inf","-inf",0,2);
+        Set sets = jedis.zrevrangeByScore("223456789","+inf","-inf",0,2);
         Iterator<String> itSets = sets.iterator();
         while (itSets.hasNext()) {
             String firstItem = itSets.next();

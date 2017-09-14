@@ -1,4 +1,5 @@
-import com.wonder.service.RecommandDataService;
+import com.wonder.service.GetRecommandResultService;
+import org.json.JSONException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class TestRecommandSystemProject {
 
     @Autowired
-    private RecommandDataService recommandDataService;
+    private GetRecommandResultService getRecommandResultService;
     @Test
-    public  void run() {
-        recommandDataService.translateData("123#kk#-1");
+    public  void run() throws JSONException {
+        System.out.println(getRecommandResultService.getItemByUserID("123456789"));
     }
 }
