@@ -1,8 +1,10 @@
 package com.kafka;
 
 
-import kafka.consumer.*;
-import kafka.javaapi.consumer.ConsumerConnector;
+import kafka.consumer.Consumer;
+import kafka.consumer.ConsumerConfig;
+import kafka.consumer.ConsumerIterator;
+import kafka.consumer.KafkaStream;
 import kafka.message.MessageAndMetadata;
 import kafka.serializer.StringDecoder;
 import kafka.utils.VerifiableProperties;
@@ -27,7 +29,7 @@ public class KafkaConsumer implements Runnable {
     /**
      * Kafka数据消费对象
      */
-    private ConsumerConnector consumer;
+    private kafka.javaapi.consumer.ConsumerConnector consumer;
 
     /**
      * Kafka Topic名称
@@ -130,6 +132,7 @@ public class KafkaConsumer implements Runnable {
         prop.put("zookeeper.session.timeout.ms", "400"); //
         prop.put("zookeeper.sync.time.ms", "200");
         prop.put("auto.commit.interval.ms", "1000");
+        prop.put("auto.commit.enable", "true");   //定期提交offset
         // 3. 构建ConsumerConfig对象
         return new ConsumerConfig(prop);
     }
@@ -156,7 +159,6 @@ public class KafkaConsumer implements Runnable {
             while (iter.hasNext()) {
                 // 2.1 获取数据值
                 MessageAndMetadata value = iter.next();
-
                 // 2.2 输出
                 System.out.println(this.threadNumber + ":" + ":" + value.offset() + value.key() + ":" + value.message());
             }

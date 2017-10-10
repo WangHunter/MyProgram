@@ -8,9 +8,9 @@ package com.kafka;
  */
 public class JavaKafkaConsumerHighAPITest {
     public static void main(String[] args) {
-        String zookeeper = "192.168.187.146:2181";
+        String zookeeper = "200.200.18.128:2181";
         String groupId = "group1";
-        String topic = "test2";
+        String topic = "shauige2";
         int threads = 1;
 
         KafkaConsumer example = new KafkaConsumer(topic, threads, zookeeper, groupId);

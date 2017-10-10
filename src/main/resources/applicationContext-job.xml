@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- Quartz Scheduler, with pre-registered triggers -->
+	<!-- Will automatically start scheduling on context startup -->
+	<bean id="scheduler1"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 今日头条新闻（非本地新闻） -->
+				<ref local="newsCrontabTrigger"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 定时抓取今日头条的JOB -->
+	<bean id="newsCrontabTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="newsCrontabJob" />
+		<property name="startDelay" value="60000" />
+		<property name="repeatInterval" value="60000" />
+	</bean>
+	
+	<bean name="newsCrontabJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.wondertek.mobilevideo.oms.basic.webapp.jobs.HeadLineNewsImportTask</value>
+		</property>
+	</bean>
+	
+
+</beans>

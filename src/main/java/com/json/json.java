@@ -38,7 +38,8 @@ public class json {
 
     @Test
     public void jsonIterator() throws JSONException {
-        String str = "{ \"_id\" : { \"$oid\" : \"59b2530ba0704068e8e9a67e\" }, \"time\" : 2.0170908E7, \"item\" : \"HPU\", \"userid\" : \"223456789\", \"item111\" : \"HPU\" }";
+//        String str = "{ \"_id\" : { \"$oid\" : \"59b2530ba0704068e8e9a67e\" }, \"time\" : 2.0170908E7, \"item\" : \"HPU\", \"userid\" : \"223456789\", \"item111\" : \"HPU\" }";
+        String str = "{ \"_id\" : 10.0, \"userid\" : \"777\", \"time\" : 2.0170919E7, \"item88\" : 88.0 }";
         JSONObject jsonObj = new JSONObject(str);
         Iterator it = jsonObj.keys();
         while (it.hasNext()) {
