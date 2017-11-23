@@ -107,7 +107,7 @@ public class Md5CaculateUtil {
 //        }
         long start = System.currentTimeMillis();
         System.out.println("开始计算文件MD5值,请稍后...");
-        String fileName = "D:\\Desktop\\recommandData-1.0-SNAPSHOT-bin.tar.gz";
+        String fileName = "D:\\Desktop\\大数据相关总结及资料\\spark培训.rar";
 ////        String fileName = "E:\\SoTowerStudio-3.1.0.exe";
         String hashType = "MD5";
         String hash = getHash(fileName, hashType);
